@@ -10,6 +10,6 @@ export type Person = {
 }
 
 export type TrainingList = {
-    trainingName: string,
+    name: string,
     count: number
 }
