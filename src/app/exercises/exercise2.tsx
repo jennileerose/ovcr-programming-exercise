@@ -1,14 +1,25 @@
 'use client'
 import { useState } from 'react'
 import { Person } from '../types'
+import { runTrainingInFiscalYear } from '../utilities'
 // import { runTrainingCountData } from '../utilities';
 
-export default function Exercise2({baseData}:{baseData: Person[]}){
+export default function Exercise2({
+  baseData,
+  fiscalYear,
+  trainings
+}:{
+    baseData: Person[],
+    fiscalYear: number,
+    trainings: string[]
+}){
     
     // const [trainingList, setTrainingList] = useState<TrainingList[]>([])
     
     function getPeopleWithSpecifiedTrainingPerYear() {
-        // use the utilities function [] to get the [] from the data
+        // use the utilities function runTrainingInFiscalYear to get the list of trainings and a fiscal year from the data
+        const newData = runTrainingInFiscalYear(baseData, fiscalYear, trainings)
+        console.log(newData)
         // transform into JSON and export for download
         console.log('Ex 2 Button Clicked')
       }
