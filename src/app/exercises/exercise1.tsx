@@ -9,10 +9,13 @@ export default function Exercise1({baseData}:{baseData: Person[]}){
     
     function getTrainingsListWithCounts() {
         // use the utilities function runTrainingCountData to get the counts from the data
-        setTrainingList(runTrainingCountData(baseData))
+        const newData = runTrainingCountData(baseData)
+        setTrainingList(newData)
+        // console.log(newData)
         // transform into JSON and export for download
-        console.log(trainingList)
-        console.log('Button Clicked')
+        const jsonString = JSON.stringify(newData);
+        console.log(jsonString)
+        console.log('Ex 1 Button Clicked')
       }
     
     return (

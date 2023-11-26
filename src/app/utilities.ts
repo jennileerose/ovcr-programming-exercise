@@ -7,7 +7,7 @@ export function runTrainingCountData(baseData: Person[]) : TrainingList[] {
     const tempTrainingWithCounts = [] as TrainingList[]
     baseData.forEach((person: Person) => {
       person.completions.forEach((comp) => {
-        if(tempTrainingsList.length === 0 || !tempTrainingsList.includes(comp.name)) {
+        if(!tempTrainingsList.includes(comp.name)) {
           tempTrainingsList.push(comp.name)
         }
       })
@@ -16,12 +16,12 @@ export function runTrainingCountData(baseData: Person[]) : TrainingList[] {
       baseData.forEach((person) => {
         person.completions.forEach((comp) => {
           if(training === comp.name) {
-            trainingCount =+ 1
+            trainingCount += 1
           }
         })
       })
       tempTrainingWithCounts.push({
-        trainingName: training,
+        name: training,
         count: trainingCount
       })
       trainingCount = 0
