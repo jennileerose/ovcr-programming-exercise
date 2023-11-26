@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs';
 import { TrainingData, Person, TrainingList } from './types';
-import { runTrainingCountData } from './utilities';
+import Exercise1 from './exercises/exercise1';
 
 export default async function Home() {
   const file = await fs.readFile(process.cwd() + '/src/app/trainings.json', 'utf8');
@@ -22,12 +22,7 @@ export default async function Home() {
     })
     tempCompletions = []
   })
-  const getTrainingsListWithCounts = () => {
-    // use the utilities function runTrainingCountData to get the counts from the data
-    trainingList = runTrainingCountData(baseData)
-    // transform into JSON and export for download
-    console.log(trainingList)
-  }
+  
   return (
     <>
       <header>
@@ -37,11 +32,10 @@ export default async function Home() {
             <div>
               <p>Click Each button to download the requested JSON Files</p>
               <br />
-              <p>List each completed training with a count of how many people have completed that training.</p>
-              <p><button className="button" onClick={getTrainingsListWithCounts}>Download JSON file</button></p>
+              <Exercise1 baseData = {baseData} />
               <br />
               <p>Given a list of trainings and a fiscal year for each specified training, list all people that completed that training in the specified fiscal year</p>
-              <p>Trainings = "Electrical Safety for Labs", "X-Ray Safety", "Laboratory Safety Training"; Fiscal Year = 2024</p>
+              <p>Trainings = `&quot;`Electrical Safety for Labs`&quot;`, `&quot;`X-Ray Safety`&quot;`, `&quot;`Laboratory Safety Training`&quot;`; Fiscal Year = 2024</p>
               <p><button className="button">Download JSON file</button></p>
               <br />
               <p>Given a date, find all people that have any completed trainings that have already expired, or will expire within one month of the specified date Oct 1st, 2023. For each person found, list each completed training that met the previous criteria, with an additional field to indicate expired vs expires soon.</p> 
