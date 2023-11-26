@@ -1,6 +1,7 @@
 import { TrainingData, Person, TrainingList } from './types';
 
 export function runTrainingCountData(baseData: Person[]) : TrainingList[] {
+    console.log(baseData[0])
     let tempTrainingsList = [] as string[]
     let trainingCount = 0
     const tempTrainingWithCounts = [] as TrainingList[]
