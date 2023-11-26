@@ -14,6 +14,7 @@ export default function Exercise1({baseData}:{baseData: Person[]}){
         // console.log(newData)
         // transform into JSON and export for download
         const jsonString = JSON.stringify(newData);
+       
         console.log(jsonString)
         console.log('Ex 1 Button Clicked')
       }
