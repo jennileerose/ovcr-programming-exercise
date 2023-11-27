@@ -7,8 +7,9 @@ After cloning the codebase, use the following steps to run the application.
 
 1. If you do not already have node.js installed, go to the [Node.js](https://nodejs.org/en/download) website to install node.js. 
 2. Open the node.js terminal and navigate to the directory where the code lives.
-3. Run the command `npm run setup`
-4. Once the application script is running, navigate to http://localhost:3000/ in the browser of your choice.
+3. Run the command `npm install`
+4. Run the command `npm run setup`
+5. Once the application script is running, navigate to http://localhost:3000/ in the browser of your choice.
 
 ## Notes about this application
 
