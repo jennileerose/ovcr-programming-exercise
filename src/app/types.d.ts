@@ -11,7 +11,7 @@ export type TrainingDataStringified = {
     expirationStatus?: string
 }
 
-export type PersonStringified {
+export type PersonStringified = {
     name: string;
     completions: TrainingDataStringified[]
 }

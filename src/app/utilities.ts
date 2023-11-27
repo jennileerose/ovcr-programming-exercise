@@ -111,19 +111,64 @@ export function runTrainingCountData(baseData: Person[]) : TrainingList[] {
   }
 
   export function runExpiredTrainingsFilter(baseData: Person[], checkDate: Date): Person[] {
+    let expireDateAsDate = new Date()
     const filteredPersonList = [] as Person[]
-    // TODO continue working on this filter function
-    // const checkDatePlusMonth = 
-    // baseData.forEach((person) => {
-    //   person.completions.forEach((comp) => {
-    //     if(comp.timestamp < checkDate || )
-    //   })
-    // })
+    let filteredTrainings = [] as TrainingData[]
+    baseData.forEach((person) => {
+      person.completions.forEach((comp) => {
+        if(comp.expires !== null) {
+          expireDateAsDate = new Date(comp.expires)
+          if(expireDateAsDate < checkDate) {
+            filteredTrainings.push(comp)
+          }
+        }
+      })
+      if(filteredTrainings.length !== 0) {
+        filteredPersonList.push({
+          name: person.name,
+          completions: filteredTrainings
+        })
+      }
+      filteredTrainings = []
+    })
+    console.log('filtered person list', filteredPersonList)
     return filteredPersonList
   }
 
-  export function reFormatExpiredTrainingPeople(baseData: Person[], checkDate: Date): PersonStringified[] {
+  export function reFormatExpiredTrainingPeople(baseData: Person[], checkDate: Date, checkDatePlusMonth: Date): PersonStringified[] {
     const reformattedPersonList = [] as PersonStringified[]
+    let tempTrainingsList = [] as TrainingDataStringified[]
+    let expireDateAsDate = new Date()
+
+    baseData.forEach((person) => {
+      person.completions.forEach((comp) => {
+        if(comp.expires !== null) {
+          expireDateAsDate = new Date(comp.expires)
+          if(expireDateAsDate <= checkDate) {
+            tempTrainingsList.push({
+              name: comp.name,
+              timestamp: comp.timestamp.toLocaleDateString('es-pa'),
+              expires: comp.expires,
+              expirationStatus: 'expired'
+            })
+          } else {
+            tempTrainingsList.push({
+              name: comp.name,
+              timestamp: comp.timestamp.toLocaleDateString('es-pa'),
+              expires: comp.expires,
+              expirationStatus: 'expires soon'
+            })
+          }
+        }
+      })
+      if(tempTrainingsList.length !== 0) {
+        reformattedPersonList.push({
+          name: person.name,
+          completions: tempTrainingsList
+        })
+      }
+      tempTrainingsList = []
+    })
 
     return reformattedPersonList
   }

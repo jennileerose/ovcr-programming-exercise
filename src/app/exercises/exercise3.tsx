@@ -6,19 +6,22 @@ export default function Exercise3({baseData, checkDate}:{baseData: Person[], che
       
     function getExpiredTrainings() {
         // use the utilities function runExpiredTrainingsFilter to get the people with expired trainings from the data
+        const splitDate = checkDate.split('/')
+        const newMonth = (parseInt(splitDate[0]) + 1).toString()
+        const newDate = newMonth + '/' + splitDate[1] + '/' + splitDate[2]
+        const newCheckDateAsDate = new Date(newDate)
         const checkDateAsDate = new Date(checkDate)
-        const filteredPersonList = runExpiredTrainingsFilter(baseData, checkDateAsDate)
-        const newData = reFormatExpiredTrainingPeople(filteredPersonList, checkDateAsDate)
+        const filteredPersonList = runExpiredTrainingsFilter(baseData, newCheckDateAsDate)
+        const newData = reFormatExpiredTrainingPeople(filteredPersonList, checkDateAsDate, newCheckDateAsDate)
         console.log(newData)
         // transform into JSON and export for download
-        console.log('Ex 3 Button Clicked')
-        // const jsonString = JSON.stringify(newData);
-        // const blob = new Blob([jsonString], { type: "text/plain" });
-        // const url = URL.createObjectURL(blob);
-        // const link = document.createElement("a");
-        // link.download = "exercise1.json";
-        // link.href = url;
-        // link.click();
+        const jsonString = JSON.stringify(newData);
+        const blob = new Blob([jsonString], { type: "text/plain" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.download = "exercise3.json";
+        link.href = url;
+        link.click();
       }
     
     return (
