@@ -12,4 +12,4 @@ After cloning the codebase, use the following steps to run the application.
 
 ## Notes about this application
 
-This application was created with create-next-app and coded using React and Next.js and basic HTML and CSS. Tailwind CSS was included but not used. 
+Because I am primarily a web designer and developer, this application was created with create-next-app and coded using React and Next.js and basic HTML and CSS. Tailwind CSS was included but not used. When creating the CSS/Styling I used the branding colors found via [The UIUC Marketing website](https://marketing.illinois.edu/visual-identity/color)
