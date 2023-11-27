@@ -13,7 +13,7 @@ export default async function Home() {
     datapoint.completions.forEach((comp: TrainingData) => {
       tempCompletions.push({
         name: comp.name,
-        timestamp: comp.timestamp,
+        timestamp: new Date(comp.timestamp),
         expires: comp.expires
       })
     })
