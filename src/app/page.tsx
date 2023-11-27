@@ -1,5 +1,5 @@
 import { promises as fs } from 'fs';
-import { TrainingData, Person, TrainingList } from './types';
+import { TrainingData, Person } from './types';
 import Exercise1 from './exercises/exercise1';
 import Exercise2 from './exercises/exercise2';
 import Exercise3 from './exercises/exercise3';
@@ -8,7 +8,7 @@ export default async function Home() {
   const file = await fs.readFile(process.cwd() + '/src/app/trainings.json', 'utf8');
   const data = JSON.parse(file);
   const baseData = [] as Person[];
-  data.forEach((datapoint: Person, datapointIndex: number) => {
+  data.forEach((datapoint: Person) => {
     let tempCompletions = [] as TrainingData[]
     datapoint.completions.forEach((comp: TrainingData) => {
       tempCompletions.push({
@@ -40,7 +40,9 @@ export default async function Home() {
             baseData={baseData}
             trainings={["Electrical Safety for Labs", "X-Ray Safety", "Laboratory Safety Training"]} />
           <br />
-          <Exercise3 baseData={baseData} />
+          <Exercise3 
+            baseData={baseData}
+            checkDate={'10/01/2023'}/>
         </div>
       </main>      
     </>

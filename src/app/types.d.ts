@@ -7,7 +7,8 @@ export type TrainingData = {
 export type TrainingDataStringified = {
     name: string,
     timestamp: string,
-    expires: string | null
+    expires: string | null,
+    expirationStatus?: string
 }
 
 export type PersonStringified {

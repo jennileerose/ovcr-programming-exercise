@@ -1,4 +1,4 @@
-import { TrainingData, Person, TrainingList, TrainingDataStringified } from './types';
+import { TrainingData, Person, TrainingList, TrainingDataStringified, PersonStringified } from './types';
 
 export function runTrainingCountData(baseData: Person[]) : TrainingList[] {
     let tempTrainingsList = [] as string[]
@@ -99,7 +99,6 @@ export function runTrainingCountData(baseData: Person[]) : TrainingList[] {
         newTempTrainings.push(tempTrainings[0])
       }
       if(newTempTrainings.length !== 0){
-        console.log(person.name, newTempTrainings)
         tempPeopleList.push({
           name: person.name,
           completions: newTempTrainings
@@ -109,4 +108,22 @@ export function runTrainingCountData(baseData: Person[]) : TrainingList[] {
       newTempTrainings = []
     })
     return tempPeopleList
+  }
+
+  export function runExpiredTrainingsFilter(baseData: Person[], checkDate: Date): Person[] {
+    const filteredPersonList = [] as Person[]
+    // TODO continue working on this filter function
+    // const checkDatePlusMonth = 
+    // baseData.forEach((person) => {
+    //   person.completions.forEach((comp) => {
+    //     if(comp.timestamp < checkDate || )
+    //   })
+    // })
+    return filteredPersonList
+  }
+
+  export function reFormatExpiredTrainingPeople(baseData: Person[], checkDate: Date): PersonStringified[] {
+    const reformattedPersonList = [] as PersonStringified[]
+
+    return reformattedPersonList
   }

@@ -1,16 +1,24 @@
 'use client'
-import { useState } from 'react'
 import { Person } from '../types'
-// import { runTrainingCountData } from '../utilities';
+import { reFormatExpiredTrainingPeople, runExpiredTrainingsFilter } from '../utilities'
 
-export default function Exercise3({baseData}:{baseData: Person[]}){
-    
-    // const [trainingList, setTrainingList] = useState<TrainingList[]>([])
-    
+export default function Exercise3({baseData, checkDate}:{baseData: Person[], checkDate: string}){
+      
     function getExpiredTrainings() {
-        // use the utilities function [] to get the [] from the data
+        // use the utilities function runExpiredTrainingsFilter to get the people with expired trainings from the data
+        const checkDateAsDate = new Date(checkDate)
+        const filteredPersonList = runExpiredTrainingsFilter(baseData, checkDateAsDate)
+        const newData = reFormatExpiredTrainingPeople(filteredPersonList, checkDateAsDate)
+        console.log(newData)
         // transform into JSON and export for download
         console.log('Ex 3 Button Clicked')
+        // const jsonString = JSON.stringify(newData);
+        // const blob = new Blob([jsonString], { type: "text/plain" });
+        // const url = URL.createObjectURL(blob);
+        // const link = document.createElement("a");
+        // link.download = "exercise1.json";
+        // link.href = url;
+        // link.click();
       }
     
     return (
