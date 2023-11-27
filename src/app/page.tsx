@@ -44,7 +44,10 @@ export default async function Home() {
             baseData={baseData}
             checkDate={'10/01/2023'}/>
         </div>
-      </main>      
+      </main>
+      <footer>
+        This code was created by <a href="http://www.jennileerosedesigns.com" target="_blank">Jennilee Benda</a>
+      </footer>      
     </>
   )
 }
