@@ -26,7 +26,7 @@ export default async function Home() {
   
   return (
     <>
-      <header>
+      <header className='header'>
           <h1>Programming Exercise for OVCR by Jennilee Benda</h1>
       </header>
       <main className="main">

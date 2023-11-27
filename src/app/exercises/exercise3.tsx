@@ -26,7 +26,7 @@ export default function Exercise3({baseData, checkDate}:{baseData: Person[], che
     
     return (
       <>
-      <p>Given a date, find all people that have any completed trainings that have already expired, or will expire within one month of the specified date Oct 1st, 2023. For each person found, list each completed training that met the previous criteria, with an additional field to indicate expired vs expires soon.</p> 
+      <p><span className='bold'>Exercise 3</span> - Find all people that have any completed trainings that have already expired, or will expire within one month of the specified date Oct 1st, 2023. For each person found, list each completed training that met the previous criteria, with an additional field to indicate expired vs expires soon.</p> 
       <p><button className="button" onClick={getExpiredTrainings}>Download JSON file</button></p>
       </>
     )

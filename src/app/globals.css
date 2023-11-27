@@ -20,3 +20,11 @@ h1 {
   color: #13294B;
   text-align: center;
 }
+
+.header {
+  border-bottom: #000 solid 1px;
+}
+
+.bold {
+  font-weight: bold;
+}

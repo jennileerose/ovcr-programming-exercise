@@ -20,7 +20,7 @@ export default function Exercise1({baseData}:{baseData: Person[]}){
     
     return (
       <>
-      <p>List each completed training with a count of how many people have completed that training.</p>
+      <p><span className='bold'>Exercise 1</span> - List each completed training with a count of how many people have completed that training.</p>
       <p><button className="button" onClick={getTrainingsListWithCounts}>Download JSON file</button></p>
       </>
     )
