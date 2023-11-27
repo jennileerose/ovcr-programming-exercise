@@ -1,7 +1,18 @@
 export type TrainingData = {
     name: string,
+    timestamp: Date,
+    expires: string | null
+}
+
+export type TrainingDataStringified = {
+    name: string,
     timestamp: string,
     expires: string | null
+}
+
+export type PersonStringified {
+    name: string;
+    completions: TrainingDataStringified[]
 }
 
 export type Person = {

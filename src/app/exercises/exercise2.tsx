@@ -1,8 +1,6 @@
 'use client'
-import { useState } from 'react'
-import { Person } from '../types'
-import { runTrainingInFiscalYear } from '../utilities'
-// import { runTrainingCountData } from '../utilities';
+import { Person, PersonStringified } from '../types'
+import { reFormatDateStrings, runTrainingInFiscalYear } from '../utilities'
 
 export default function Exercise2({
   baseData,
@@ -13,15 +11,26 @@ export default function Exercise2({
     fiscalYear: number,
     trainings: string[]
 }){
-    
-    // const [trainingList, setTrainingList] = useState<TrainingList[]>([])
-    
+        
     function getPeopleWithSpecifiedTrainingPerYear() {
         // use the utilities function runTrainingInFiscalYear to get the list of trainings and a fiscal year from the data
         const newData = runTrainingInFiscalYear(baseData, fiscalYear, trainings)
-        console.log(newData)
+        // use reformatting function to reformat Dates into date strings
+        const reFormattedDatesData = [] as PersonStringified[]
+        newData.forEach((person) => {
+          reFormattedDatesData.push({
+            name: person.name,
+            completions: reFormatDateStrings(person.completions)
+          })
+        })
         // transform into JSON and export for download
-        console.log('Ex 2 Button Clicked')
+        const jsonString = JSON.stringify(reFormattedDatesData);
+        const blob = new Blob([jsonString], { type: "text/plain" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.download = "exercise2.json";
+        link.href = url;
+        link.click();
       }
     
     return (
