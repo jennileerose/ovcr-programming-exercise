@@ -8,14 +8,6 @@ body {
   margin-right: auto;
 }
 
-/* .button {
-  background-color: #F5821E;
-  font-weight: bold;
-  color: #13294B;
-  padding: 0.25em;
-  border: solid 1px #13294B
-} */
-
 .button {
 	box-shadow:inset 0px 1px 0px 0px #c84013;
 	background:linear-gradient(to bottom, #f5821e 5%, #ff6105 100%);
@@ -59,4 +51,11 @@ h1 {
 
 .bold {
   font-weight: bold;
+}
+
+.footer {
+  margin-top: 3em;
+  padding: 1em;
+  border-top: #000 solid 1px;
+  font-size: 0.75em;
 }

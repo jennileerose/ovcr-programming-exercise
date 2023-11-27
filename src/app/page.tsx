@@ -45,7 +45,7 @@ export default async function Home() {
             checkDate={'10/01/2023'}/>
         </div>
       </main>
-      <footer>
+      <footer className="footer">
         This code was created by <a href="http://www.jennileerosedesigns.com" target="_blank">Jennilee Benda</a>
       </footer>      
     </>
