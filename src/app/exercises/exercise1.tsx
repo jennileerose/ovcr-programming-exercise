@@ -2,9 +2,12 @@
 import { Person } from '../types'
 import { runTrainingCountData } from '../utilities';
 
+/**************************************************************************
+This file imports that main data array (baseData) from the page.tsx file 
+When the button is clicked, it takes baseData and manipulates it into 
+the new array of objects (newData)
+***************************************************************************/
 export default function Exercise1({baseData}:{baseData: Person[]}){
-    
-    
     function getTrainingsListWithCounts() {
         // use the utilities function runTrainingCountData to get the counts from the data
         const newData = runTrainingCountData(baseData)

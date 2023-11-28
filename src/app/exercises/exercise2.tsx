@@ -2,6 +2,21 @@
 import { Person, PersonStringified } from '../types'
 import { reFormatDateStrings, runTrainingInFiscalYear } from '../utilities'
 
+/**************************************************************************
+This file imports the following properties from the page.tsx file:
+baseData - The main array of data objects
+fiscalYear - the year specified in the exercise (in this exercise it was 2024)
+trainings - an array of strings each describing the trainings that the user
+wants to search for. In this exercise it was the following:
+
+Electrical Safety for Labs
+X-Ray Safety
+Laboratory Safety Training
+
+When the button is clicked, it takes baseData and manipulates it into 
+the new array of objects (newData) and then it is re-formatted with the
+dates put into strings in the mm/dd/yyyy format from the original file
+***************************************************************************/
 export default function Exercise2({
   baseData,
   fiscalYear,

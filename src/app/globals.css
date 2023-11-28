@@ -1,3 +1,7 @@
+/* this contains all the styling used on the page.
+with the exception of the h1 tag and the bold class
+all are classes named after the tags they are used on*/
+
 body {
   color: #000;
   background-color: #FFF;

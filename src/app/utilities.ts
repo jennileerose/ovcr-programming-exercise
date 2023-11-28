@@ -1,5 +1,6 @@
 import { TrainingData, Person, TrainingList, TrainingDataStringified, PersonStringified } from './types';
 
+/* This function is called from the Exercise 1 component and transforms the data into the TrainingList object array */
 export function runTrainingCountData(baseData: Person[]) : TrainingList[] {
     let tempTrainingsList = [] as string[]
     let trainingCount = 0
@@ -28,7 +29,9 @@ export function runTrainingCountData(baseData: Person[]) : TrainingList[] {
     return tempTrainingWithCounts
   }
 
-  export function reFormatDateStrings(completions: TrainingData[]): TrainingDataStringified[]
+/* This function is called from the Exercise 2 component and transforms the filtered data 
+into an array of people with those trainings where the timestamps are once again mm/dd/yyyy strings */
+export function reFormatDateStrings(completions: TrainingData[]): TrainingDataStringified[]
   {
     let convertedTrainingData = [] as TrainingDataStringified[]
     completions.forEach((comp) => {
@@ -42,13 +45,15 @@ export function runTrainingCountData(baseData: Person[]) : TrainingList[] {
     return convertedTrainingData
   }
 
-  function compareTrainingDates(trainingA: TrainingData, trainingB: TrainingData): any {
+/* This function is internal to this utilities file and works as the sort comparison function on array.sort() */  
+function compareTrainingDates(trainingA: TrainingData, trainingB: TrainingData): any {
     const diff = trainingA.timestamp.getTime() - trainingB.timestamp.getTime()
-    console.log('diff', diff)
     return  diff
   }
 
-  function pruneTrainings(trainingsData: TrainingData[]) : TrainingData[] {
+/* This function is internal to this utilities file and takes two trainings that are the same type and compares the timestamp
+properites, pushing forward the most recent one */  
+function pruneTrainings(trainingsData: TrainingData[]) : TrainingData[] {
     let tempNewTrainingData = [] as TrainingData[]
     let seen = new Set();
     let dupeHolder = [] as TrainingData[]
@@ -75,7 +80,8 @@ export function runTrainingCountData(baseData: Person[]) : TrainingList[] {
     return tempNewTrainingData
   }
 
-  export function runTrainingInFiscalYear(
+/* This function is called from the Exercise 2 component and transforms the data into the filtered object array */  
+export function runTrainingInFiscalYear(
     baseData: Person[],
     fiscalYear: number,
     trainings: string[]
@@ -110,7 +116,8 @@ export function runTrainingCountData(baseData: Person[]) : TrainingList[] {
     return tempPeopleList
   }
 
-  export function runExpiredTrainingsFilter(baseData: Person[], checkDate: Date): Person[] {
+/* This function is called from the Exercise 3 component and transforms the data into the filtered object array */  
+export function runExpiredTrainingsFilter(baseData: Person[], checkDate: Date): Person[] {
     let expireDateAsDate = new Date()
     const filteredPersonList = [] as Person[]
     let filteredTrainings = [] as TrainingData[]
@@ -131,11 +138,14 @@ export function runTrainingCountData(baseData: Person[]) : TrainingList[] {
       }
       filteredTrainings = []
     })
-    console.log('filtered person list', filteredPersonList)
     return filteredPersonList
   }
 
-  export function reFormatExpiredTrainingPeople(baseData: Person[], checkDate: Date, checkDatePlusMonth: Date): PersonStringified[] {
+/* This function is called from the Exercise 3 component and transforms the filtered data into the object 
+array of people with those expired or soon to expire trainings where the timestamps are once again mm/dd/yyyy 
+strings. It also adds that expiredStatus property
+*/  
+export function reFormatExpiredTrainingPeople(baseData: Person[], checkDate: Date): PersonStringified[] {
     const reformattedPersonList = [] as PersonStringified[]
     let tempTrainingsList = [] as TrainingDataStringified[]
     let expireDateAsDate = new Date()
