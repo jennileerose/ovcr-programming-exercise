@@ -3,13 +3,19 @@ This application is for a job application at the University of Illinois at Urban
 
 ## Instructions to run the application
 
-After cloning the codebase, use the following steps to run the application.
-
-1. If you do not already have node.js installed, go to the [Node.js](https://nodejs.org/en/download) website to install node.js. 
-2. Open the node.js terminal and navigate to the directory where the code lives.
-3. Run the command `npm install`
-4. Run the command `npm run setup`
-5. Once the application script is running, navigate to http://localhost:3000/ in the browser of your choice.
+1. Click the green Code button at the top right of the repository and click download zip file
+![download_codebse](https://github.com/jennileerose/ovcr-programming-exercise/assets/4683606/4ed0a8f7-9ce1-44a6-87b2-8642d7ffca8c)
+2. Extract the files to a place on your PC where you can find them, such as your Documents or Desktop folder. (I'm using the documents folder in my example)
+3. If you do not already have node.js installed, go to the [Node.js](https://nodejs.org/en/download) website to install node.js. 
+    a. If you do have Node.js installed but an older version (older than 20), download the latest from the Node.js website and install it.
+4. Once Node.js is installed, Open the node.js terminal from the Node menu in your start/apps menu (example image is from Windows 10).
+![nodept1](https://github.com/jennileerose/ovcr-programming-exercise/assets/4683606/30627904-c6e2-4e7b-8695-e8f049bce0a1)
+![nodept2](https://github.com/jennileerose/ovcr-programming-exercise/assets/4683606/b0f3210d-ce03-425a-b364-79938956818c)
+5. Navigate to the directory where the code lives using `cd` example, I downloaded the code and extracted it into my documents folder so I would type: `cd Documents\ovcr-programming-exercise\ovcr-programming-exercise` (you have to do the repository name twice like that because of the way github nests things in their downloads)
+![nodept3](https://github.com/jennileerose/ovcr-programming-exercise/assets/4683606/d7a0b490-1b09-4473-8ae2-482feebd169d)
+6. In the terminal, run the command `npm install`
+7. Then run `npm run startup`
+6. Once the application script is running (it will say Ready in and a number of ms), navigate to http://localhost:3000/ in the browser of your choice.
 
 ## Notes about this application
 

@@ -31,7 +31,7 @@ export default async function Home() {
       </header>
       <main className="main">
         <div>
-          <p>Click Each button to download the requested JSON Files</p>
+          <p>Click each button to download the requested JSON files for each exercise.</p>
           <br />
           <Exercise1 baseData={baseData} />
           <br />
