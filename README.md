@@ -11,7 +11,7 @@ This application is for a job application at the University of Illinois at Urban
 4. Once Node.js is installed, Open the node.js terminal from the Node menu in your start/apps menu (example image is from Windows 10).
 ![nodept1](https://github.com/jennileerose/ovcr-programming-exercise/assets/4683606/30627904-c6e2-4e7b-8695-e8f049bce0a1)
 ![nodept2](https://github.com/jennileerose/ovcr-programming-exercise/assets/4683606/b0f3210d-ce03-425a-b364-79938956818c)
-5. Navigate to the directory where the code lives using `cd` example, I downloaded the code and extracted it into my documents folder so I would type: `cd Documents\ovcr-programming-exercise\ovcr-programming-exercise` (you have to do the repository name twice like that because of the way github nests things in their downloads)
+5. Navigate to the directory where the code lives using `cd`. For example, I downloaded the code and extracted it into my documents folder so I would type: `cd Documents\ovcr-programming-exercise\ovcr-programming-exercise` (you have to do the repository name twice like that because of the way github nests things in their downloads)
 ![nodept3](https://github.com/jennileerose/ovcr-programming-exercise/assets/4683606/d7a0b490-1b09-4473-8ae2-482feebd169d)
 6. In the terminal, run the command `npm install`
 7. Then run `npm run startup`
