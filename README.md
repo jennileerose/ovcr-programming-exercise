@@ -11,7 +11,7 @@ This application is for a job application at the University of Illinois at Urban
 
 3. If you do not already have node.js installed, go to the [Node.js](https://nodejs.org/en/download) website to install node.js. 
 
-a. If you do have Node.js installed but an older version (older than 20), download the latest from the Node.js website and install it.
+    a. If you do have Node.js installed but an older version (older than 20), download the latest from the Node.js website and install it.
 
 4. Once Node.js is installed, Open the node.js terminal from the Node menu in your start/apps menu (example image is from Windows 10).
 
