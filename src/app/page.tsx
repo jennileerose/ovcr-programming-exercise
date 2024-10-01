@@ -1,9 +1,11 @@
 import { promises as fs } from 'fs';
 import { TrainingData, Person } from './types';
-// import in each of the exercise sections
-import Exercise1 from './exercises/exercise1';
-import Exercise2 from './exercises/exercise2';
-import Exercise3 from './exercises/exercise3';
+import HomeTabs from './homeTabs';
+// import { changeTab } from './utilities';
+// // import in each of the exercise sections
+// import Exercise1 from './exercises/exercise1';
+// import Exercise2 from './exercises/exercise2';
+// import Exercise3 from './exercises/exercise3';
 
 /******************************************************
 This is the main page where the application code starts. 
@@ -15,6 +17,7 @@ All the type definitions are in the ./types.d.ts file
 ******************************************************/
 
 export default async function Home() {
+  
   // import the file with the trainings data
   const file = await fs.readFile(process.cwd() + '/src/app/trainings.json', 'utf8');
   // parse the data from json into an array of objects
@@ -39,26 +42,13 @@ export default async function Home() {
   })
   
   return (
-    // This is the html main page code. Each <Exercise> tag is one of the exercises with directions and the button
+    // This is the html main page code. This displays each of the exercises in a seperate Tab using the HomeTabs component
     <>
       <header className='header'>
           <h1>Programming Exercise for OVCR by Jennilee Benda</h1>
       </header>
       <main className="main">
-        <div>
-          <p>Click each button to download the requested JSON files for each exercise.</p>
-          <br />
-          <Exercise1 baseData={baseData} />
-          <br />
-          <Exercise2
-            fiscalYear={2024}
-            baseData={baseData}
-            trainings={["Electrical Safety for Labs", "X-Ray Safety", "Laboratory Safety Training"]} />
-          <br />
-          <Exercise3 
-            baseData={baseData}
-            checkDate={'10/01/2023'}/>
-        </div>
+        <HomeTabs baseData={baseData}/>
       </main>
       <footer className="footer">
         This code was created by <a href="http://www.jennileerosedesigns.com" target="_blank">Jennilee Benda</a>

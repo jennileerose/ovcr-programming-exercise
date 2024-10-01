@@ -182,3 +182,30 @@ export function reFormatExpiredTrainingPeople(baseData: Person[], checkDate: Dat
 
     return reformattedPersonList
   }
+
+  export function changeTab(tabID: string, buttonID: string) {
+    // Declare all variables
+    let i: number
+    let tabContent: any
+    let tabLinks: any
+    let selectedTab = document.getElementById(tabID)
+    let selectedButton = document.getElementById(buttonID)
+
+    // Get all elements with class="tabcontent" and hide them
+    tabContent = document.getElementsByClassName('tabcontent')
+    for (i = 0; i < tabContent.length; i++) {
+      tabContent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tabLinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tabLinks.length; i++) {
+      tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    if(selectedTab !== null && selectedButton !== null) {
+      selectedTab.style.display = "block";
+      selectedButton.className += " active";
+    }
+  }  

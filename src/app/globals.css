@@ -10,6 +10,7 @@ body {
 .main {
   margin-left: 3em;
   margin-right: auto;
+  margin-top: 2em;
 }
 
 .button {
@@ -31,12 +32,12 @@ body {
 .button:hover {
 	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
 	background-color:#13294b;
-  color: #FFF
+  	color: #FFF
 }
 .button:focus {
 	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
 	background-color:#13294b;
-  color: #FFF
+  	color: #FFF
 }
 .button:active {
 	position:relative;
@@ -63,3 +64,54 @@ h1 {
   border-top: #000 solid 1px;
   font-size: 0.75em;
 }
+
+/* Style the tab */
+.tab {
+	overflow: hidden;
+	border: 1px solid #13294b;
+	background-color: #bbb;
+	width: 87.25%;
+	margin: auto;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+	float: left;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+	box-shadow:inset 0px 1px 0px 0px #c84013;
+	background:linear-gradient(to bottom, #f5821e 5%, #ff6105 100%);
+	background-color:#f5821e;
+	border:1px solid #13294b;
+	color:#13294b;
+	font-family:Arial;
+	font-size: 0.75em;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #c84013;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+	background-color:#13294b;
+  	color: #FFF
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+	display: none;
+	padding: 6px 12px;
+	border: 1px solid #13294b;
+	border-top: none;
+	width: 85%;
+	margin: auto;
+  }
+  
