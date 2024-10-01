@@ -1,5 +1,7 @@
-import { TrainingData, Person, TrainingList, TrainingDataStringified, PersonStringified } from './types';
+import { TrainingData, Person, TrainingList, TrainingDataStringified, PersonStringified, Ex2and3DisplayData } from './types';
 
+/* This function is called from Custom Exercise 2 to fill the 
+multiselect form object with all the different training names*/
 export function getTrainingsList(baseData: Person[]): string[] {
   const trainingsList = [] as string[]
 
@@ -94,7 +96,6 @@ export function runTrainingInFiscalYear(
     trainings: string[]
     ) : Person[] {
 
-    console.log(fiscalYear, trainings)
     let minDate = new Date("7/1/" + (fiscalYear-1).toString())
     let maxDate = new Date("6/30/" + fiscalYear.toString())
     let tempPeopleList = [] as Person[]
@@ -192,30 +193,39 @@ export function reFormatExpiredTrainingPeople(baseData: Person[], checkDate: Dat
     return reformattedPersonList
   }
 
-  export function changeTab(tabID: string, buttonID: string) {
-    // Declare all variables
-    let i: number
-    let tabContent: any
-    let tabLinks: any
-    let selectedTab = document.getElementById(tabID)
-    let selectedButton = document.getElementById(buttonID)
+/* This function reformats the data from Exercise 3 (custom and default) for the display table*/  
+export function formatEx3DisplayData(data: PersonStringified[]): Ex2and3DisplayData[] {
+  const displayData = [] as Ex2and3DisplayData[]
 
-    // Get all elements with class="tabcontent" and hide them
-    tabContent = document.getElementsByClassName('tabcontent')
-    for (i = 0; i < tabContent.length; i++) {
-      tabContent[i].style.display = "none";
-    }
+  data.forEach((person) => {
+    person.completions.forEach((training) => {
+      displayData.push({
+        name: person.name,
+        trainingName: training.name,
+        trainingTimestamp: training.timestamp,
+        trainingExpireDate: training.expires,
+        trainingExpirationStatus: training.expirationStatus
+      })
+    })
+  })
 
-    // Get all elements with class="tablinks" and remove the class "active"
-    tabLinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tabLinks.length; i++) {
-      tabLinks[i].className = tabLinks[i].className.replace(" active", "");
-    }
+  return displayData
+}
 
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    if(selectedTab !== null && selectedButton !== null) {
-      selectedTab.style.display = "block";
-      selectedButton.className += " active";
-    }
-  }  
+/* This function reformats the data from Exercise 2 (custom and default) for the display table*/
+export function formatEx2DisplayData(data: PersonStringified[]): Ex2and3DisplayData[] {
+  const displayData = [] as Ex2and3DisplayData[]
 
+  data.forEach((person) => {
+    person.completions.forEach((training) => {
+      displayData.push({
+        name: person.name,
+        trainingName: training.name,
+        trainingTimestamp: training.timestamp,
+        trainingExpireDate: training.expires,
+      })
+    })
+  })
+
+  return displayData
+}

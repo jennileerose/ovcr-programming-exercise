@@ -70,7 +70,7 @@ h1 {
 	overflow: hidden;
 	border: 1px solid #13294b;
 	background-color: #bbb;
-	width: 87.25%;
+	width: 86.25%;
 	margin: auto;
   }
   
@@ -80,16 +80,10 @@ h1 {
 	cursor: pointer;
 	padding: 14px 16px;
 	transition: 0.3s;
-	box-shadow:inset 0px 1px 0px 0px #c84013;
-	background:linear-gradient(to bottom, #f5821e 5%, #ff6105 100%);
-	background-color:#f5821e;
-	border:1px solid #13294b;
-	color:#13294b;
 	font-family:Arial;
 	font-size: 0.75em;
 	font-weight:bold;
 	text-decoration:none;
-	text-shadow:0px 0px 0px #c84013;
   }
   
   /* Change background color of buttons on hover */
@@ -107,11 +101,103 @@ h1 {
   
   /* Style the tab content */
   .tabcontent {
-	display: none;
 	padding: 6px 12px;
 	border: 1px solid #13294b;
-	border-top: none;
 	width: 85%;
 	margin: auto;
   }
+
+  .active-button {
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF;
+  }
   
+  .non-active-button {
+	background:linear-gradient(to bottom, #f5821e 5%, #ff6105 100%);
+	background-color:#f5821e;
+	color:#13294b;
+  }
+
+  /* Table styling */
+  .btn_Reset {
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF;
+	border-radius: 0px !important;
+	cursor:pointer;
+  }
+
+  .toggle-btnManageTable {
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF;
+	border-radius: 0px !important;
+	cursor:pointer;
+  }
+
+  .btnOpenManageTable {
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF;
+	cursor:pointer;
+  }
+
+  .box_ChoiceEntries {
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF;
+	cursor:pointer;
+  }
+
+  .toggle-btnManagedColumns {
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF;
+	cursor:pointer;
+  }
+
+  .btnShowAllColumns {
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF;
+	border-radius: 0px !important;
+  }
+
+  .btn_closeModalTable {
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF;
+	border-radius: 0px !important;
+  }
+
+  .box_searchGlobal input {
+	background: #fbfbfb;
+    border: none;
+    font-size: 14px;
+    border-radius: 0px !important;
+    box-shadow: inset 6px 6px 6px #d1d4db, inset -6px -6px 6px #fff;
+    outline: 1px solid #dcefe8;
+  }
+
+  .dropdownToggleTable .buttonToggleRowPerPage {
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF;
+  }
+
+  .manageTable-dropdown .buttonToggleRowPerPage{
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF;
+  }
+
+  .manageTable-dropdownLi.li_manageColumns {
+	border-radius: 0px !important;
+  }
+
+  .manageTable-dropdown .dropdownOptionRowPerPage {
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF;
+  }

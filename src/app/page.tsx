@@ -48,11 +48,11 @@ export default async function Home() {
           <h1>Programming Exercise for OVCR by Jennilee Benda</h1>
       </header>
       <main className="main">
-        <p>This site uses the supplied trainings file automatically on page load. For the new Oct 01 2024 version, I have improved some of my previous code and added two new exercise options for exercises 2 and 3 which allow the user to select custom paramters in a form.</p>
+        <p>This site uses the supplied trainings file automatically on page load. For the new Oct 01 2024 version, I have improved some of my previous code, aded data display tables, and added two new exercise options for exercises 2 and 3 which allow the user to select custom paramters in a form.</p>
         <HomeTabs baseData={baseData}/>
       </main>
       <footer className="footer">
-        This code was created by <a href="http://www.jennileerosedesigns.com" target="_blank">Jennilee Benda</a>
+        This code was created from scratch in React with TypeScript and Next.js by <a href="http://www.jennileerosedesigns.com" target="_blank">Jennilee Benda</a> with the following exceptions: Multiselect component from npm library <a href="https://www.npmjs.com/package/react-multi-select-component" target="_blank">react-mulit-select-component</a> - Data table from npm library <a href="https://www.npmjs.com/package/typescript-table" target='_blank'>typescript-table</a>
       </footer>      
     </>
   )
