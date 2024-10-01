@@ -31,3 +31,8 @@ export type TrainingList = {
     name: string,
     count: number
 }
+
+export type TrainingListOptions = {
+    value: string,
+    label: string
+}
