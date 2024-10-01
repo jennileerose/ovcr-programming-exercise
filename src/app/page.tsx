@@ -1,11 +1,6 @@
 import { promises as fs } from 'fs';
 import { TrainingData, Person } from './types';
 import HomeTabs from './homeTabs';
-// import { changeTab } from './utilities';
-// // import in each of the exercise sections
-// import Exercise1 from './exercises/exercise1';
-// import Exercise2 from './exercises/exercise2';
-// import Exercise3 from './exercises/exercise3';
 
 /******************************************************
 This is the main page where the application code starts. 
