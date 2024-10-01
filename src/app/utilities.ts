@@ -1,17 +1,26 @@
-import { TrainingData, Person, TrainingList, TrainingDataStringified, PersonStringified } from './types';
+import { TrainingData, Person, TrainingList, TrainingDataStringified, PersonStringified, Ex2and3DisplayData } from './types';
+
+/* This function is called from Custom Exercise 2 to fill the 
+multiselect form object with all the different training names*/
+export function getTrainingsList(baseData: Person[]): string[] {
+  const trainingsList = [] as string[]
+
+  baseData.forEach((person: Person) => {
+    person.completions.forEach((comp) => {
+      if(!trainingsList.includes(comp.name)) {
+        trainingsList.push(comp.name)
+      }
+    })
+  })
+
+  return trainingsList
+}
 
 /* This function is called from the Exercise 1 component and transforms the data into the TrainingList object array */
 export function runTrainingCountData(baseData: Person[]) : TrainingList[] {
-    let tempTrainingsList = [] as string[]
+    let tempTrainingsList = getTrainingsList(baseData)
     let trainingCount = 0
     const tempTrainingWithCounts = [] as TrainingList[]
-    baseData.forEach((person: Person) => {
-      person.completions.forEach((comp) => {
-        if(!tempTrainingsList.includes(comp.name)) {
-          tempTrainingsList.push(comp.name)
-        }
-      })
-    })
     tempTrainingsList.forEach((training) => {
       baseData.forEach((person) => {
         person.completions.forEach((comp) => {
@@ -86,6 +95,7 @@ export function runTrainingInFiscalYear(
     fiscalYear: number,
     trainings: string[]
     ) : Person[] {
+
     let minDate = new Date("7/1/" + (fiscalYear-1).toString())
     let maxDate = new Date("6/30/" + fiscalYear.toString())
     let tempPeopleList = [] as Person[]
@@ -182,3 +192,40 @@ export function reFormatExpiredTrainingPeople(baseData: Person[], checkDate: Dat
 
     return reformattedPersonList
   }
+
+/* This function reformats the data from Exercise 3 (custom and default) for the display table*/  
+export function formatEx3DisplayData(data: PersonStringified[]): Ex2and3DisplayData[] {
+  const displayData = [] as Ex2and3DisplayData[]
+
+  data.forEach((person) => {
+    person.completions.forEach((training) => {
+      displayData.push({
+        name: person.name,
+        trainingName: training.name,
+        trainingTimestamp: training.timestamp,
+        trainingExpireDate: training.expires,
+        trainingExpirationStatus: training.expirationStatus
+      })
+    })
+  })
+
+  return displayData
+}
+
+/* This function reformats the data from Exercise 2 (custom and default) for the display table*/
+export function formatEx2DisplayData(data: PersonStringified[]): Ex2and3DisplayData[] {
+  const displayData = [] as Ex2and3DisplayData[]
+
+  data.forEach((person) => {
+    person.completions.forEach((training) => {
+      displayData.push({
+        name: person.name,
+        trainingName: training.name,
+        trainingTimestamp: training.timestamp,
+        trainingExpireDate: training.expires,
+      })
+    })
+  })
+
+  return displayData
+}

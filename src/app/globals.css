@@ -10,6 +10,7 @@ body {
 .main {
   margin-left: 3em;
   margin-right: auto;
+  margin-top: 2em;
 }
 
 .button {
@@ -22,7 +23,7 @@ body {
 	cursor:pointer;
 	color:#13294b;
 	font-family:Arial;
-	font-size: 1em;
+	font-size: 0.75em;
 	font-weight:bold;
 	padding:1em 1.25em;
 	text-decoration:none;
@@ -31,12 +32,12 @@ body {
 .button:hover {
 	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
 	background-color:#13294b;
-  color: #FFF
+  	color: #FFF
 }
 .button:focus {
 	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
 	background-color:#13294b;
-  color: #FFF
+  	color: #FFF
 }
 .button:active {
 	position:relative;
@@ -63,3 +64,140 @@ h1 {
   border-top: #000 solid 1px;
   font-size: 0.75em;
 }
+
+/* Style the tab */
+.tab {
+	overflow: hidden;
+	border: 1px solid #13294b;
+	background-color: #bbb;
+	width: 86.25%;
+	margin: auto;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+	float: left;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+	font-family:Arial;
+	font-size: 0.75em;
+	font-weight:bold;
+	text-decoration:none;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+	background-color:#13294b;
+  	color: #FFF
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+	padding: 6px 12px;
+	border: 1px solid #13294b;
+	width: 85%;
+	margin: auto;
+  }
+
+  .active-button {
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF;
+  }
+  
+  .non-active-button {
+	background:linear-gradient(to bottom, #f5821e 5%, #ff6105 100%);
+	background-color:#f5821e;
+	color:#13294b;
+  }
+
+  /* Table styling */
+  .btn_Reset {
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF;
+	border-radius: 0px !important;
+	cursor:pointer;
+  }
+
+  .toggle-btnManageTable {
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF;
+	border-radius: 0px !important;
+	cursor:pointer;
+  }
+
+  .btnOpenManageTable {
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF;
+	cursor:pointer;
+  }
+
+  .box_ChoiceEntries {
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF;
+	cursor:pointer;
+  }
+
+  .toggle-btnManagedColumns {
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF;
+	cursor:pointer;
+  }
+
+  .btnShowAllColumns {
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF;
+	border-radius: 0px !important;
+  }
+
+  .btn_closeModalTable {
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF;
+	border-radius: 0px !important;
+  }
+
+  .box_searchGlobal input {
+	background: #fbfbfb;
+    border: none;
+    font-size: 14px;
+    border-radius: 0px !important;
+    box-shadow: inset 6px 6px 6px #d1d4db, inset -6px -6px 6px #fff;
+    outline: 1px solid #dcefe8;
+  }
+
+  .dropdownToggleTable .buttonToggleRowPerPage {
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF;
+  }
+
+  .manageTable-dropdown .buttonToggleRowPerPage{
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF;
+  }
+
+  .manageTable-dropdownLi.li_manageColumns {
+	border-radius: 0px !important;
+  }
+
+  .manageTable-dropdown .dropdownOptionRowPerPage {
+	background:linear-gradient(to bottom, #13294b 5%, #1D58A7 100%);
+	background-color:#13294b;
+  	color: #FFF;
+  }
