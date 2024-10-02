@@ -19,13 +19,13 @@ This application is for a job application at the University of Illinois at Urban
 
 ![nodept2](https://github.com/jennileerose/ovcr-programming-exercise/assets/4683606/b0f3210d-ce03-425a-b364-79938956818c)
 
-5. Navigate to the directory where the code lives using `cd`. For example, I downloaded the code and extracted it into my documents folder so I would type: `cd Documents\ovcr-programming-exercise\ovcr-programming-exercise` (you have to do the repository name twice like that because of the way github nests things in their downloads)
+5. Navigate to the directory where the code lives using `cd`. For example, I downloaded the code and extracted it into my documents folder so I would type: `cd Documents\ovcr-programming-exercise-main\ovcr-programming-exercise-main` (you have to do the repository name twice like that because of the way github nests things in their downloads)
 
 ![nodept3](https://github.com/jennileerose/ovcr-programming-exercise/assets/4683606/d7a0b490-1b09-4473-8ae2-482feebd169d)
 
-6. In the terminal, run the command `npm install`
+6. In the terminal, run the command `npm install`. This may run for a few minutes.
 
-7. Then run `npm run startup`
+7. Then run `npm run startup`. This may also run for a couple of minutes.
 
 6. Once the application script is running (it will say Ready like the screenshot below), navigate to http://localhost:3000/ in the browser of your choice.
 
@@ -34,3 +34,5 @@ This application is for a job application at the University of Illinois at Urban
 ## Notes about this application
 
 Because I am primarily a web designer and developer, this application was created with create-next-app and coded using React and Next.js and basic HTML and CSS. Tailwind CSS was included but not used. When creating the CSS/Styling I used the branding colors found via [The UIUC Marketing website](https://marketing.illinois.edu/visual-identity/color)
+
+The 2024 version of this has new features: data displays and custom parameters for exercises 2 and 3.
